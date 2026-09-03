@@ -14,6 +14,7 @@ int moves_made = 0;
 void print_board(char board[9]) {
   for (int i = 0; i < 9; i++) {
     std::cout << board[i];
+     std::cout << " ";
     if ((i + 1) % 3 == 0)
         std::cout << std::endl;
   }
@@ -100,8 +101,8 @@ int get_cpu_choice(char board[9]) {
   }
 
   // Go middle if applicable
-  if (board[5] == '5') {
-    return 5;
+  if (board[4] == '5') {
+    return 4;
   }
 
   // try to connect one into two
@@ -165,7 +166,7 @@ int main() {
   print_board(board);
 
   char sq;
-  bool found;
+  bool found = false;
 
   bool first = true;
   std::string turn = "";
@@ -183,11 +184,14 @@ int main() {
     print_board(board);
   } else {
     std::cout << "You are X's\n";
+    
   }
 
   while (true) {
 
     while (!found) {
+      std::cout << "\n";
+      print_board(board);
       std::cout << "Pick a square: ";
       std::cin >> sq;
 
@@ -251,3 +255,4 @@ int main() {
 
   return 0;
 }
+
