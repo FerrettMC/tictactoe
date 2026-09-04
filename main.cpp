@@ -184,6 +184,7 @@ int main() {
     print_board(board);
   } else {
     std::cout << "You are X's\n";
+    print_board(board);
     
   }
 
@@ -191,7 +192,7 @@ int main() {
 
     while (!found) {
       std::cout << "\n";
-      print_board(board);
+      
       std::cout << "Pick a square: ";
       std::cin >> sq;
 
@@ -226,6 +227,7 @@ int main() {
 
     // int ind = get_random_choice(board); // gets random choice
     int ind = get_cpu_choice(board); // cpu
+    std::cout << "Computer chose: " << board[ind] << std::endl;
     board[ind] = cpu_char;
     moves_made++;
 
@@ -255,4 +257,3 @@ int main() {
 
   return 0;
 }
-
